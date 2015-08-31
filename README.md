@@ -29,7 +29,7 @@ new bugs as well.  Critical bugfixes are backported to the stable branch.  In
 general, the stable release is recommended, but the mainline release is
 typically quite stable as well.
 
-- `['nginx-repo']['debian']['supported-codenames']`
+- `['apt-nginx']['debian']['supported-codenames']`
   - _Type:_ Hash
 
   - _Description:_
