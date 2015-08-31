@@ -18,7 +18,7 @@ Requirements
 Attributes
 ----------
 #### apt-nginx::default
-The default recipe is for installing & configuring the NGINX apt repostories.
+The default recipe is for installing & configuring the apt NGINX repostories.
 Any attribute supported by the [apt cookbook](https://github.com/opscode-cookbooks/apt#attribute-parameters)
 is supported by this cookbook and can be used to override attributes in this
 cookbook.
