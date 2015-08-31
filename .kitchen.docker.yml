@@ -1,0 +1,70 @@
+driver:
+  name: docker
+
+provisioner:
+  name: chef_zero
+
+platforms:
+  # https://hub.docker.com/_/debian/
+  - name: debian-6
+  - name: debian-7
+  - name: debian-8
+
+  # https://hub.docker.com/_/ubuntu/
+  - name: ubuntu-10.04
+  - name: ubuntu-12.04
+  - name: ubuntu-14.04
+  - name: ubuntu-14.10
+
+suites:
+  - name: dflt_w_dbn
+    run_list:
+      - recipe[apt-nginx]
+      - recipe[nginx-pkg]
+    includes:
+      - debian-6
+      - debian-7
+      - debian-8
+
+  - name: dflt_w_ubtu
+    run_list:
+      - recipe[apt-nginx]
+      - recipe[nginx-pkg]
+    includes:
+      - ubuntu-10.04
+      - ubuntu-12.04
+      - ubuntu-14.04
+      - ubuntu-14.10
+
+  - name: mnln_w_dbn
+    run_list:
+      - recipe[apt-nginx]
+      - recipe[nginx-pkg]
+    attributes:
+      apt-nginx:
+        repos:
+          nginx-stable:
+            managed: false
+          nginx-mainline:
+            managed: true
+    includes:
+      - debian-6
+      - debian-7
+      - debian-8
+
+  - name: mnln_w_ubtu
+    run_list:
+      - recipe[apt-nginx]
+      - recipe[nginx-pkg]
+    attributes:
+      apt-nginx:
+        repos:
+          nginx-stable:
+            managed: false
+          nginx-mainline:
+            managed: true
+    includes:
+      - ubuntu-10.04
+      - ubuntu-12.04
+      - ubuntu-14.04
+      - ubuntu-14.10
