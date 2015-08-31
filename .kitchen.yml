@@ -1,0 +1,90 @@
+driver:
+  name: vagrant
+
+provisioner:
+  name: chef_zero
+
+platforms:
+  # https://github.com/chef/bento
+  - name: debian-6.0.10-i386
+  - name: debian-6.0.10
+  - name: debian-7.8-i386
+  - name: debian-7.8
+  - name: debian-8.1-i386
+  - name: debian-8.1
+
+  - name: ubuntu-10.04-i386
+  - name: ubuntu-10.04
+  - name: ubuntu-12.04-i386
+  - name: ubuntu-12.04
+  - name: ubuntu-14.04-i386
+  - name: ubuntu-14.04
+  - name: ubuntu-14.10-i386
+  - name: ubuntu-14.10
+
+suites:
+  - name: dflt_w_dbn
+    run_list:
+      - recipe[apt-nginx]
+      - recipe[nginx-pkg]
+    includes:
+      - debian-6.0.10-i386
+      - debian-6.0.10
+      - debian-7.8-i386
+      - debian-7.8
+      - debian-8.1-i386
+      - debian-8.1
+
+  - name: dflt_w_ubtu
+    run_list:
+      - recipe[apt-nginx]
+      - recipe[nginx-pkg]
+    includes:
+      - ubuntu-10.04-i386
+      - ubuntu-10.04
+      - ubuntu-12.04-i386
+      - ubuntu-12.04
+      - ubuntu-14.04-i386
+      - ubuntu-14.04
+      - ubuntu-14.10-i386
+      - ubuntu-14.10
+
+  - name: mnln_w_dbn
+    run_list:
+      - recipe[apt-nginx]
+      - recipe[nginx-pkg]
+    attributes:
+      apt-nginx:
+        repos:
+          nginx-stable:
+            managed: false
+          nginx-mainline:
+            managed: true
+    includes:
+      - debian-6.0.10-i386
+      - debian-6.0.10
+      - debian-7.8-i386
+      - debian-7.8
+      - debian-8.1-i386
+      - debian-8.1
+
+  - name: mnln_w_ubtu
+    run_list:
+      - recipe[apt-nginx]
+      - recipe[nginx-pkg]
+    attributes:
+      apt-nginx:
+        repos:
+          nginx-stable:
+            managed: false
+          nginx-mainline:
+            managed: true
+    includes:
+      - ubuntu-10.04-i386
+      - ubuntu-10.04
+      - ubuntu-12.04-i386
+      - ubuntu-12.04
+      - ubuntu-14.04-i386
+      - ubuntu-14.04
+      - ubuntu-14.10-i386
+      - ubuntu-14.10
