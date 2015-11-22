@@ -21,6 +21,8 @@ platforms:
   - name: ubuntu-14.04
   - name: ubuntu-14.10-i386
   - name: ubuntu-14.10
+  - name: ubuntu-15.04-i386
+  - name: ubuntu-15.04
 
 suites:
   - name: dflt_w_dbn
@@ -48,6 +50,8 @@ suites:
       - ubuntu-14.04
       - ubuntu-14.10-i386
       - ubuntu-14.10
+      - ubuntu-15.04-i386
+      - ubuntu-15.04
 
   - name: mnln_w_dbn
     run_list:
@@ -88,3 +92,5 @@ suites:
       - ubuntu-14.04
       - ubuntu-14.10-i386
       - ubuntu-14.10
+      - ubuntu-15.04-i386
+      - ubuntu-15.04

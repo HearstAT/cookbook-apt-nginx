@@ -12,9 +12,15 @@ platforms:
 
   # https://hub.docker.com/_/ubuntu/
   - name: ubuntu-10.04
+  # - name: ubuntu-11.10
   - name: ubuntu-12.04
+  # - name: ubuntu-12.10
+  # - name: ubuntu-13.04
+  # - name: ubuntu-13.10
   - name: ubuntu-14.04
-  - name: ubuntu-14.10
+  # - name: ubuntu-14.10
+  - name: ubuntu-15.04
+  - name: ubuntu-15.10
 
 suites:
   - name: dflt_w_dbn
@@ -34,7 +40,8 @@ suites:
       - ubuntu-10.04
       - ubuntu-12.04
       - ubuntu-14.04
-      - ubuntu-14.10
+      - ubuntu-15.04
+      - ubuntu-15.10
 
   - name: mnln_w_dbn
     run_list:
@@ -67,4 +74,5 @@ suites:
       - ubuntu-10.04
       - ubuntu-12.04
       - ubuntu-14.04
-      - ubuntu-14.10
+      - ubuntu-15.04
+      - ubuntu-15.10

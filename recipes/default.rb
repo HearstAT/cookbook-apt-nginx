@@ -28,17 +28,17 @@ node['apt-nginx']['repos'].each do |repo, value|
     #  https://github.com/opscode-cookbooks/apt
     #  https://github.com/opscode-cookbooks/apt/blob/master/resources/repository.rb
 
-    repo_name value['repo_name']
-    uri value['uri']
-    distribution value['distribution']
-    components value['components']
-    arch value['arch']
-    trusted value['trusted']
-    deb_src value['deb-src']
-    keyserver value['keyserver']
-    key value['key']
-    key_proxy value['key_proxy']
-    cookbook value['cookbook']
-    cache_rebuild value['cache_rebuild']
+    repo_name value['repo_name'] unless value['repo_name'].nil?
+    uri value['uri'] unless value['uri'].nil?
+    distribution value['distribution'] unless value['distribution'].nil?
+    components value['components'] unless value['components'].nil?
+    arch value['arch'] unless value['arch'].nil?
+    trusted value['trusted'] unless value['trusted'].nil?
+    deb_src value['deb-src'] unless value['deb-src'].nil?
+    keyserver value['keyserver'] unless value['keyserver'].nil?
+    key value['key'] unless value['key'].nil?
+    key_proxy value['key_proxy'] unless value['key_proxy'].nil?
+    cookbook value['cookbook'] unless value['cookbook'].nil?
+    cache_rebuild value['cache_rebuild'] unless value['cache_rebuild'].nil?
   end if value['managed']
 end

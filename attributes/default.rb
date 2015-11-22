@@ -22,9 +22,15 @@ default['apt-nginx']['debian']['supported-codenames'] = {
   wheezy: true,  # Debian 7.x
   jessie: true,  # Debian 8.x
   lucid: true,   # Ubuntu 10.04
+  oneiric: true, # Ubuntu 11.10
   precise: true, # Ubuntu 12.04
+  quantal: true, # Ubuntu 12.10
+  raring: true,  # Ubuntu 13.04
+  saucy: true,   # Ubuntu 13.10
   trusty: true,  # Ubuntu 14.04
-  utopic: true   # Ubuntu 14.10
+  utopic: true,  # Ubuntu 14.10
+  vivid: true,   # Ubuntu 15.04
+  wily: true     # Ubuntu 15.10
 }
 
 baseurl_prefix = 'http://nginx.org/packages'

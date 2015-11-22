@@ -72,7 +72,7 @@ describe 'apt-nginx' do
 
   supported_platforms = {
     debian: ['6.0.5', '7.0', '8.0'],
-    ubuntu: ['10.04', '12.04', '14.04', '14.10']
+    ubuntu: ['10.04', '12.04', '13.04', '13.10', '14.04', '14.10', '15.04', '15.10']
   }
 
   supported_platforms.each do |platform, versions|
@@ -92,13 +92,13 @@ describe 'apt-nginx' do
 
   describe 'when on an unsupported platform' do
     let(:chef_run) do
-      ChefSpec::SoloRunner.new(platform: 'ubuntu', version: '13.04')
+      ChefSpec::SoloRunner.new(platform: 'redhat', version: '7.1')
         .converge(described_recipe)
     end
 
     it 'should raise an error' do
       expect { chef_run }.to \
-        raise_error('debian/ubuntu/13.04 is not supported by the default recipe')
+        raise_error('rhel/redhat/7.1 is not supported by the default recipe')
     end
   end
 end
