@@ -20,9 +20,5 @@ group :'local-integration' do
   gem 'kitchen-vagrant'
 end
 
-group :'ci-integration' do
-  gem 'kitchen-docker-api'
-end
-
 # publish
 gem 'stove'
