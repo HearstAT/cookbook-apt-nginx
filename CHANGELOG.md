@@ -7,6 +7,7 @@ cookbook.
 -----
 - St. Isidore de Seville (st.isidore.de.seville@gmail.com)
   - fix Chef 13 deprecation warnings
+  - fix Chef 11 issues
   - add additional support for the following OSes:
     - Ubuntu 11.10
     - Ubuntu 12.10
